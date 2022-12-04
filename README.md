@@ -1,5 +1,5 @@
 # React Application Food
-Рабочую версию приложения можно посмотреть на [GitHub Pages](https://freylgit.github.io/react-movies).
+Рабочую версию приложения можно посмотреть на [GitHub Pages](https://FreylGit.github.io/react-food/).
 
 
 ## Available Scripts
