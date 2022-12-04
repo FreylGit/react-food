@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter as Router ,Route,Routes} from 'react-router-dom'
+import {Header} from "./components/Header"
+import {Footer} from "./components/Footer"
+
+import {Home} from "./pages/Home"
+import {About} from "./pages/About"
+import {Contact} from "./pages/Contact"
+import {NotFound} from "./pages/NotFound"
+import {Recipe} from './pages/Recipe'
 import './App.css';
+import { Category } from './pages/Category';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Router>
+        <Header/>
+          <main className="container content">
+              <Routes>
+                <Route exact path="/"  element={<Home />} />
+                <Route path="/about" element={<About/>} />
+                <Route path="/contact" element={<Contact/>} />
+                <Route path='/category/:name' element={<Category/>}/>
+                <Route path='/meal/:id' element={<Recipe/>}/>
+                <Route path="/*" element={<NotFound/>} />
+               </Routes>
+            </main>   
+        <Footer/>
+        </Router>
+      </React.Fragment>
   );
 }
 
