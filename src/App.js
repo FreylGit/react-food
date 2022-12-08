@@ -15,7 +15,7 @@ import { Category } from './pages/Category';
 function App() {
   return (
     <React.Fragment>
-      <Router>
+      <Router basename='/react-food'>
         <Header/>
           <main className="container content">
               <Routes>
